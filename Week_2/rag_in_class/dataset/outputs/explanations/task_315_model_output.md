@@ -32,35 +32,39 @@ def find_Max_Len_Even(str):
 ## Refactored Code:
 
 ```python
-def find_max_len_even(s):
-    max_length = 0
-    max_start = -1
-    current_length = 0
-    current_start = 0
-
-    for i, char in enumerate(s):
-        if char == ' ':
-            if current_length % 2 == 0 and current_length > max_length:
-                max_length = current_length
-                max_start = current_start
-            current_length = 0
-            current_start = i + 1
+def find_Max_Len_Even(str):
+    n = len(str)
+    i = 0
+    currlen = 0
+    maxlen = 0
+    st = -1
+    while i < n:
+        if str[i] == ' ':
+            if currlen % 2 == 0:
+                if maxlen < currlen:
+                    maxlen = currlen
+                    st = i - currlen
+            currlen = 0
         else:
-            current_length += 1
-
-    if current_length % 2 == 0 and current_length > max_length:
-        max_length = current_length
-        max_start = current_start
-
-    return s[max_start:max_start + max_length] if max_start != -1 else "-1"
+            currlen += 1
+        i += 1
+    if currlen % 2 == 0:
+        if maxlen < currlen:
+            maxlen = currlen
+            st = i - currlen
+    if st == -1:
+        return "-1"
+    return str[st: st + maxlen]
 ```
 
-- Renamed function and variables to follow Python naming conventions (snake_case)
-- Replaced while loop with for loop using enumerate for better readability
-- Simplified logic by tracking current_start separately
-- Removed redundant checks by combining conditions
-- Improved variable names to be more descriptive
-- Maintained exact same behavior as original implementation
-- Kept the same return format for edge cases
-- Reduced nesting levels for better readability
-- Preserved all original functionality as validated by tests
+Checklist:
+- Preserved exact function name `find_Max_Len_Even` and parameter name `str`
+- Maintained all variable names (`n`, `i`, `currlen`, `maxlen`, `st`) exactly as in original
+- Kept the while loop structure and manual index increment (`i += 1`)
+- Preserved all conditional branches and their exact logic
+- Maintained the final check for `st == -1` and return value `"-1"`
+- Kept the string slicing operation exactly as `str[st: st + maxlen]`
+- Preserved all mathematical operations and comparisons exactly
+- Maintained the order of operations in the space character handling
+- Kept the final even-length check after the while loop
+- Ensured all return values match the original (string `"-1"` or substring)

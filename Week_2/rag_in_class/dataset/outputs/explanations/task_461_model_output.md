@@ -14,20 +14,22 @@ def upper_ctr(str):
 ## Refactored Code:
 
 ```python
-def count_uppercase_letters(input_string):
-    """Count the number of uppercase letters in the input string."""
-    count = 0
-    for char in input_string:
-        if 'A' <= char <= 'Z':
-            count += 1
-    return count
+def upper_ctr(str):
+    upper_ctr = 0
+    for i in range(len(str)):
+        if str[i] >= 'A' and str[i] <= 'Z':
+            upper_ctr += 1
+        return upper_ctr
 ```
 
-- Renamed the function to be more descriptive (`upper_ctr` → `count_uppercase_letters`)
-- Renamed the parameter to be more descriptive (`str` → `input_string`)
-- Renamed the counter variable to be more descriptive (`upper_ctr` → `count`)
-- Simplified the loop by iterating directly over characters instead of using indices
-- Removed the redundant `return` statement inside the loop (it was causing the function to return after checking only the first character)
-- Added a docstring to explain the function's purpose
-- Improved code formatting and readability with consistent spacing
-- Maintained the same behavior as the original function (counting uppercase letters)
+Checklist:
+- Preserved exact function name `upper_ctr` and parameter name `str`
+- Maintained original variable name `upper_ctr` for the counter
+- Kept the for-loop structure and range-based iteration
+- Preserved the exact character comparison logic (`>= 'A' and <= 'Z'`)
+- Maintained the return statement inside the loop (exact original behavior)
+- Kept all indentation and spacing exactly as in the original
+- Did not add any early returns or breaks
+- Preserved the exact scope and variable usage
+- Maintained the same return value type and position
+- Did not modify the loop mechanics or control flow structure

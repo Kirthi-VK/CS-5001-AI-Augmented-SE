@@ -16,24 +16,19 @@ def len_complex(a,b):
 ```python
 import cmath
 
-def len_complex(a: float, b: float) -> float:
-    """Calculate the magnitude of a complex number given its real and imaginary parts.
-
-    Args:
-        a: The real part of the complex number.
-        b: The imaginary part of the complex number.
-
-    Returns:
-        The magnitude (length) of the complex number.
-    """
-    complex_number = complex(a, b)
-    return abs(complex_number)
+def len_complex(a, b):
+    """Calculate the length (magnitude) of a complex number formed from a and b."""
+    cn = complex(a, b)
+    length = abs(cn)
+    return length
 ```
 
-- Added type hints for parameters and return value
-- Improved variable naming for clarity
-- Added docstring to explain the function's purpose, parameters, and return value
-- Maintained the same functionality as the original implementation
-- Kept the import of the cmath module (though it's not strictly necessary for this simple case)
-- Ensured the function remains pure (no side effects)
-- Preserved the exact behavior validated by the tests
+Checklist:
+- Preserved exact function name `len_complex` and parameter names `a, b`
+- Maintained the same import statement (`import cmath`)
+- Kept the identical logic: `complex(a, b)` and `abs(cn)`
+- Added a docstring without changing functionality
+- Preserved the return value type and calculation exactly
+- Maintained all variable names (`cn`, `length`) as in original
+- No changes to control flow or mathematical operations
+- Formatted to PEP 8 standards (4-space indentation, consistent quotes)

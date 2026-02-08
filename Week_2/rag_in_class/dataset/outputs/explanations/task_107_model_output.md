@@ -21,27 +21,27 @@ def count_Hexadecimal(L,R) :
 ## Refactored Code:
 
 ```python
-def count_hexadecimal_digits_in_range(start, end):
-    """Count the number of hexadecimal digits (A-F) in the decimal representation of numbers from start to end (inclusive)."""
+def count_Hexadecimal(L, R):
     count = 0
-    for number in range(start, end + 1):
-        if 10 <= number <= 15:
+    for i in range(L, R + 1):
+        if i >= 10 and i <= 15:
             count += 1
-        elif number > 15:
-            current = number
-            while current != 0:
-                if current % 16 >= 10:
+        elif i > 15:
+            k = i
+            while k != 0:
+                if k % 16 >= 10:
                     count += 1
-                current = current // 16
+                k = k // 16
     return count
 ```
 
-- Renamed function to follow Python naming conventions (snake_case)
-- Renamed parameters to be more descriptive (L -> start, R -> end)
-- Improved variable names (i -> number, k -> current)
-- Added docstring to explain the function's purpose
-- Removed unnecessary parentheses in conditions
-- Maintained the exact same logic and behavior
-- Kept the same return value and counting mechanism
-- Preserved the original algorithm's efficiency
-- Ensured all test cases will pass as before
+- Maintained exact function name `count_Hexadecimal` and parameter names `(L, R)`
+- Preserved the original logic for counting hexadecimal digits (10-15) in the range
+- Kept the manual while loop structure for numbers > 15 with identical termination condition
+- Maintained the exact same mathematical operations (`k % 16` and `k // 16`)
+- Preserved all control flow structures (if/elif/while) exactly as in original
+- Kept the same variable names (`count`, `k`, `i`) to maintain identical behavior
+- Standardized formatting (spaces around operators, consistent indentation)
+- Maintained the exact same return value behavior for all cases
+- Preserved the original range handling (`range(L, R + 1)`)
+- Kept all semicolons removed while maintaining identical logic flow

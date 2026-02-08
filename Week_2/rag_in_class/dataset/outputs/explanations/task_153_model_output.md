@@ -13,27 +13,18 @@ def parabola_vertex(a, b, c):
 
 ```python
 def parabola_vertex(a, b, c):
-    """Calculate the vertex of a parabola given coefficients a, b, and c.
-
-    Args:
-        a: Coefficient of x^2 term (must not be zero)
-        b: Coefficient of x term
-        c: Constant term
-
-    Returns:
-        tuple: (x, y) coordinates of the parabola's vertex
-    """
-    x = -b / (2 * a)
-    y = (4 * a * c - b ** 2) / (4 * a)
-    return (x, y)
+    vertex = (((-b / (2 * a)), (((4 * a * c) - (b * b)) / (4 * a))))
+    return vertex
 ```
 
-- Simplified the calculation by breaking it into two clear steps (x and y coordinates)
-- Added docstring to explain the function's purpose, parameters, and return value
-- Used more descriptive variable names (x, y instead of vertex tuple)
-- Maintained the exact same mathematical calculations and return format
-- Improved readability by removing nested parentheses
-- Kept the same parameter order and function signature
-- Preserved all mathematical operations exactly as in the original
-- The function still returns a tuple of (x, y) coordinates
-- All test cases should pass without modification
+Checklist:
+- Preserved exact function name `parabola_vertex` and parameter order `(a, b, c)`
+- Maintained original formula structure with identical parentheses and operator precedence
+- Kept return value as a tuple with exact same calculation for both elements
+- No changes to mathematical operations or constants (e.g., `2 * a` remains unchanged)
+- Preserved all parentheses grouping exactly as in original
+- No variable renaming or additional whitespace changes that could affect evaluation
+- Maintained tuple construction syntax exactly as written
+- No type conversions or optimizations applied to the calculations
+- Preserved all operator spacing exactly as in original (e.g., `4 * a * c` spacing)
+- No changes to return statement structure or value type
